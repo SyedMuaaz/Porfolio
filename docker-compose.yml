@@ -1,0 +1,7 @@
+services:
+  portfolio:
+    build: .
+    container_name: portfolio
+    ports:
+      - "3333:80"
+    restart: unless-stopped

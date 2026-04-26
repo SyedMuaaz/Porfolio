@@ -453,6 +453,25 @@ button:focus {
   background-image: var(--section-background-color) !important;
 }
 
+/* Project category tabs (React-Bootstrap Tabs) */
+.project-category-tabs.nav-tabs {
+  border-bottom: none !important;
+}
+
+.project-category-tabs.nav-tabs .nav-link {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Selected tab only */
+.project-category-tabs.nav-tabs .nav-link.active,
+.project-category-tabs.nav-tabs .nav-item.show .nav-link {
+  color: #ffffff !important;
+  background-color: var(--imp-text-color) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
 .project-card {
   padding-top: 50px !important;
   padding-bottom: 50px !important;

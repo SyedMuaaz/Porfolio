@@ -38,13 +38,18 @@ function ProjectCards(props) {
       props.screenshots.forEach((rawSrc) => {
         const src = typeof rawSrc === "string" ? rawSrc : rawSrc?.src || rawSrc;
         if (!seen.has(`img:${src}`)) {
-          // For Pollen Pop and Word Buzzle, screenshots 02–05 should render at half height
+          // For Pollen Pop + Word Buzzle: screenshots 02–05 render at half size.
+          // For EscobaHD: screenshots 01–05 render at half size (their first screenshot is also tall).
           const title = (props.title || "").toLowerCase();
+          const isEscoba =
+            title.includes("escobahd") || title.includes("escoba hd");
           const isTargetTitle =
-            title.includes("pollen pop") || title.includes("word buzzle");
+            title.includes("pollen pop") || title.includes("word buzzle") || isEscoba;
           const s = String(src);
+          const indexPattern = isEscoba ? "0[1-5]" : "0[2-5]";
           const isTargetIndex =
-            /(^|[\\/])0[2-5]\./i.test(s) || /(^|[\\/])0[2-5]_/i.test(s);
+            new RegExp(`(^|[\\\\/])${indexPattern}\\.`, "i").test(s) ||
+            new RegExp(`(^|[\\\\/])${indexPattern}_`, "i").test(s);
           const halfHeight = isTargetTitle && isTargetIndex;
           items.push({ type: "image", src, halfHeight });
           seen.add(`img:${src}`);
@@ -151,10 +156,11 @@ function ProjectCards(props) {
                       src={slides[activeSlide].src}
                       alt={`preview-${activeSlide + 1}`}
                       style={{
-                        width: "50%",
+                        width: slides[activeSlide].halfHeight ? "50%" : "100%",
                         height: "auto",
                         borderRadius: "0.25rem",
                         objectFit: "contain",
+                        maxHeight: slides[activeSlide].halfHeight ? "800px" : undefined,
                         display: "block",
                         marginLeft: "auto",
                         marginRight: "auto",

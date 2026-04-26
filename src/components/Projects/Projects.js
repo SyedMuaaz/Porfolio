@@ -583,7 +583,7 @@ function Projects() {
         ),
         categories: ["Apps"],
         screenshots: jhgScreens,
-        youtubeId: "xanAyHSBmnA",
+        youtubeId: "JbVoWdtGgso",
       },
     ],
     []
@@ -616,7 +616,7 @@ function Projects() {
             id="project-category-tabs"
             activeKey={activeKey}
             onSelect={(k) => setActiveKey(k || "All")}
-            className="mb-3 justify-content-center"
+            className="project-category-tabs mb-3 justify-content-center"
             justify
           >
             {categories.map((cat) => (

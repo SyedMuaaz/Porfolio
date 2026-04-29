@@ -561,7 +561,8 @@ button:focus {
 
 /* Truncate project card description to 3 lines */
 .project-card-summary {
-  text-align: justify !important;
+  text-align: left !important;
+  line-height: 1.6 !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
@@ -586,6 +587,10 @@ button:focus {
 .project-modal-content .modal-footer {
   background-color: transparent !important;
   font-family: "Raleway", serif !important;
+}
+.project-modal-description {
+  text-align: left !important;
+  line-height: 1.6 !important;
 }
 .project-modal-content h5,
 .project-modal-content h4,

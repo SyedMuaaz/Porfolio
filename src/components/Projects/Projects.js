@@ -159,6 +159,52 @@ function Projects() {
     stakeThumb = siteLogo;
   }
 
+  // Auto-load screenshots and thumbnail for PhotoFinish if present
+  let pfScreens = [];
+  let pfThumb = siteLogo;
+  try {
+    const ctxPF = require.context(
+      "../../Assets/Projects/PhotoFinish",
+      false,
+      /\.(png|jpe?g|webp)$/
+    );
+    pfScreens = importAll(ctxPF);
+    const keysPF = ctxPF.keys();
+    const thumbKeyPF = keysPF.find((k) => /thumbnail\.(png|jpe?g|webp)$/i.test(k));
+    if (thumbKeyPF) {
+      pfThumb = ctxPF(thumbKeyPF);
+    } else if (pfScreens.length > 0) {
+      pfThumb = pfScreens[0];
+    }
+  } catch (e) {
+    pfScreens = [];
+    pfThumb = siteLogo;
+  }
+
+  // Auto-load screenshots and thumbnail for HorseRacingManager2026 if present
+  let hrmScreens = [];
+  let hrmThumb = siteLogo;
+  try {
+    const ctxHRM = require.context(
+      "../../Assets/Projects/HorseRacingManager2026",
+      false,
+      /\.(png|jpe?g|webp)$/
+    );
+    hrmScreens = importAll(ctxHRM);
+    const keysHRM = ctxHRM.keys();
+    const thumbKeyHRM = keysHRM.find((k) =>
+      /thumbnail\.(png|jpe?g|webp)$/i.test(k)
+    );
+    if (thumbKeyHRM) {
+      hrmThumb = ctxHRM(thumbKeyHRM);
+    } else if (hrmScreens.length > 0) {
+      hrmThumb = hrmScreens[0];
+    }
+  } catch (e) {
+    hrmScreens = [];
+    hrmThumb = siteLogo;
+  }
+
   // Auto-load screenshots and thumbnail for PsykineticBattleChess if present
   let pbcScreens = [];
   let pbcThumb = siteLogo;
@@ -359,6 +405,83 @@ function Projects() {
         categories: ["Game", "Web"],
         screenshots: stakeScreens,
         youtubeIds: ["wCyQGSiCstk", "oY9zheao31o"],
+      },
+      {
+        imgPath: pfThumb,
+        title: "PhotoFinish",
+        description: (
+          <>
+            Contributed to the development of a live horse racing simulation game, focusing on backend stability and live operations.
+            <br />
+            <br />
+            Integrated and managed AWS services (DynamoDB, S3, Cognito) for secure player data handling and session management.
+            <br />
+            <br />
+            Designed and implemented event-driven systems, including sales, promotions, and seasonal content updates.
+            <br />
+            <br />
+            Supported real-time multiplayer systems, ensuring smooth synchronization and performance.
+            <br />
+            <br />
+            Maintained live game updates with minimal downtime, improving reliability and player experience.
+            <br />
+            <br />
+            Collaborated on monetization features, enhancing in-game purchases and revenue systems.
+            <br />
+            <br />
+            Play Store:&nbsp;
+            <a
+              href="https://play.google.com/store/apps/details?id=com.thirdtime.derbyking&hl=en-US"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Photo Finish Horse Racing on Google Play
+            </a>
+          </>
+        ),
+        categories: ["Game", "Apps"],
+        screenshots: pfScreens,
+        youtubeId: "M1EwfJSOci0",
+      },
+      {
+        imgPath: hrmThumb,
+        title: "HorseRacingManager2026",
+        description: (
+          <>
+            Contributed to a live multiplayer horse racing game, focusing on backend stability and live operations.
+            <br />
+            <br />
+            Diagnosed and resolved critical AWS issues (DynamoDB, S3, Cognito) impacting player data and session management.
+            <br />
+            <br />
+            Implemented and configured event-driven systems for sales, offers, and seasonal content via remote configuration.
+            <br />
+            <br />
+            Supported monetization systems, improving in-game purchase flows, and promotional features.
+            <br />
+            <br />
+            Enhanced system reliability and stability, reducing failures in live production environments.
+            <br />
+            <br />
+            Enabled seamless live updates with minimal to zero downtime.
+            <br />
+            <br />
+            Collaborated on live ops workflows to ensure smooth deployment of content and features.
+            <br />
+            <br />
+            Play Store:&nbsp;
+            <a
+              href="https://play.google.com/store/search?q=Horse%20Racing%20Manager&c=apps"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Horse Racing Manager on Google Play
+            </a>
+          </>
+        ),
+        categories: ["Game", "Apps"],
+        screenshots: hrmScreens,
+        youtubeId: "CgMpb12gr_8",
       },
       {
         imgPath: popThumb,

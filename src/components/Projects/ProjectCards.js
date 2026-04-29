@@ -93,7 +93,11 @@ function ProjectCards(props) {
               (props.title || "").toLowerCase().includes("enableall") ||
               (props.title || "").toLowerCase().includes("enable all") ||
               (props.title || "").toLowerCase().includes("jhguitarapp") ||
-              (props.title || "").toLowerCase().includes("jh guitar app")
+              (props.title || "").toLowerCase().includes("jh guitar app") ||
+              (props.title || "").toLowerCase().includes("photofinish") ||
+              (props.title || "").toLowerCase().includes("photo finish") ||
+              (props.title || "").toLowerCase().includes("horseracingmanager2026") ||
+              (props.title || "").toLowerCase().includes("horse racing manager 2026")
                 ? "75%"
                 : "100%",
             height: "auto",
@@ -126,7 +130,9 @@ function ProjectCards(props) {
           <Row>
             <Col md={5} style={{ marginBottom: "16px" }}>
               <h5 style={{ marginBottom: 12 }}>{props.title}</h5>
-              <p style={{ textAlign: "justify", marginBottom: 0 }}>{props.description}</p>
+              <p className="project-modal-description" style={{ marginBottom: 0 }}>
+                {props.description}
+              </p>
             </Col>
             <Col md={7}>
               <div style={{ width: "100%", marginBottom: 12 }}>

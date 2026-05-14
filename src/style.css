@@ -484,14 +484,26 @@ button:focus {
   box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
   color: white !important;
   background-color: transparent !important;
-  opacity: 0.9 !important;
   transition: all 0.5s ease 0s !important;
   height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 .project-card-view:hover {
   transform: scale(1.02) !important;
   overflow: hidden !important;
   box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+}
+
+.project-card-view .card-body {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 auto !important;
+}
+
+.project-card-view .card-body > .btn {
+  margin-top: auto !important;
+  align-self: center !important;
 }
 
 .blog-card {
@@ -527,7 +539,6 @@ button:focus {
 
 .card-img-top {
   padding: 20px !important;
-  opacity: 0.8 !important;
   border-radius: 10px !important;
 }
 
@@ -570,6 +581,65 @@ button:focus {
   text-overflow: ellipsis !important;
 }
 
+.project-card-meta-group {
+  margin-bottom: 14px !important;
+  text-align: left !important;
+}
+
+.project-card-meta-title {
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  color: #d7b6ff !important;
+  margin-bottom: 8px !important;
+}
+
+.project-chip-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px !important;
+}
+
+.project-chip {
+  display: inline-block !important;
+  border: 1px solid rgba(200, 137, 230, 0.55) !important;
+  background: rgba(109, 32, 197, 0.16) !important;
+  color: #efe4ff !important;
+  border-radius: 999px !important;
+  padding: 4px 10px !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+}
+
+.project-chip-tech {
+  border: 1px solid rgba(200, 137, 230, 0.55) !important;
+  background: rgba(109, 32, 197, 0.16) !important;
+  color: #efe4ff !important;
+  font-weight: 500 !important;
+}
+
+.project-chip-highlight {
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  padding: 6px 14px !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Alternate colorful gradients for highlight tags */
+.project-chip-highlight:nth-child(3n + 1) {
+  background: linear-gradient(135deg, #4f6dff 0%, #8f65ff 100%) !important;
+}
+
+.project-chip-highlight:nth-child(3n + 2) {
+  background: linear-gradient(135deg, #d16bff 0%, #ff5f89 100%) !important;
+}
+
+.project-chip-highlight:nth-child(3n) {
+  background: linear-gradient(135deg, #ff9a5a 0%, #ffd34f 100%) !important;
+}
+
 /* --------- */
 /* Project Modal */
 /* --------- */
@@ -591,6 +661,38 @@ button:focus {
 .project-modal-description {
   text-align: left !important;
   line-height: 1.6 !important;
+}
+
+.project-modal-meta-group {
+  margin-bottom: 14px !important;
+}
+
+.project-modal-meta-title {
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  color: #d7b6ff !important;
+  margin-bottom: 8px !important;
+}
+
+.project-link-buttons {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.project-link-buttons-right {
+  margin-top: 40px !important;
+  margin-bottom: 12px !important;
+  justify-content: center !important;
+}
+
+.project-link-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 8px !important;
+  padding: 7px 14px !important;
+  font-weight: 600 !important;
 }
 .project-modal-content h5,
 .project-modal-content h4,

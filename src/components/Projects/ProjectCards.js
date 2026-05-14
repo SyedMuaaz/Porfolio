@@ -5,10 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import Ratio from "react-bootstrap/Ratio";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { FaApple, FaGooglePlay, FaGlobe } from "react-icons/fa";
 
 function ProjectCards(props) {
   const [showModal, setShowModal] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
+  const highlightTags = Array.isArray(props.highlightTags) ? props.highlightTags : [];
+  const techStack = Array.isArray(props.techStack) ? props.techStack : [];
+  const links = Array.isArray(props.links) ? props.links : [];
 
   const slides = useMemo(() => {
     const items = [];
@@ -69,6 +73,13 @@ function ProjectCards(props) {
   const handleNext = () =>
     setActiveSlide((idx) => (slides.length ? (idx + 1) % slides.length : 0));
 
+  const renderLinkIcon = (type) => {
+    if (type === "appstore") return <FaApple style={{ marginRight: 6 }} />;
+    if (type === "playstore") return <FaGooglePlay style={{ marginRight: 6 }} />;
+    if (type === "website") return <FaGlobe style={{ marginRight: 6 }} />;
+    return null;
+  };
+
   return (
     <>
       <Card className="project-card-view">
@@ -108,9 +119,32 @@ function ProjectCards(props) {
         />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
-        <Card.Text className="project-card-summary">
-          {props.description}
-        </Card.Text>
+        {highlightTags.length > 0 && (
+          <div className="project-card-meta-group">
+            <div className="project-chip-list">
+              {highlightTags.map((tag, idx) => (
+                <span
+                  className="project-chip project-chip-highlight"
+                  key={`highlight-${props.title}-${idx}`}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+        {techStack.length > 0 && (
+          <div className="project-card-meta-group">
+            <div className="project-card-meta-title">Tech Stack</div>
+            <div className="project-chip-list">
+              {techStack.map((tech, idx) => (
+                <span className="project-chip project-chip-tech" key={`tech-${props.title}-${idx}`}>
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
         <Button variant="primary" onClick={handleOpen}>
           View
         </Button>
@@ -130,9 +164,35 @@ function ProjectCards(props) {
           <Row>
             <Col md={5} style={{ marginBottom: "16px" }}>
               <h5 style={{ marginBottom: 12 }}>{props.title}</h5>
+              {highlightTags.length > 0 && (
+                <div className="project-modal-meta-group">
+                  <div className="project-chip-list">
+                    {highlightTags.map((tag, idx) => (
+                      <span
+                        className="project-chip project-chip-highlight"
+                        key={`modal-highlight-${props.title}-${idx}`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
               <p className="project-modal-description" style={{ marginBottom: 0 }}>
                 {props.description}
               </p>
+              {techStack.length > 0 && (
+                <div className="project-modal-meta-group">
+                  <div className="project-modal-meta-title">Tech Stack</div>
+                  <div className="project-chip-list">
+                    {techStack.map((tech, idx) => (
+                      <span className="project-chip project-chip-tech" key={`modal-tech-${props.title}-${idx}`}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </Col>
             <Col md={7}>
               <div style={{ width: "100%", marginBottom: 12 }}>
@@ -188,6 +248,23 @@ function ProjectCards(props) {
                   <Button variant="primary" onClick={handleNext}>
                     Next →
                   </Button>
+                </div>
+              )}
+              {links.length > 0 && (
+                <div className="project-link-buttons project-link-buttons-right">
+                  {links.map((link, idx) => (
+                    <Button
+                      key={`modal-link-${props.title}-${idx}`}
+                      variant="primary"
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="project-link-btn"
+                    >
+                      {renderLinkIcon(link.type)}
+                      {link.label}
+                    </Button>
+                  ))}
                 </div>
               )}
             </Col>

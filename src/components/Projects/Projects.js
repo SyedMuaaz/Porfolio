@@ -387,53 +387,54 @@ function Projects() {
         youtubeId: "Ml05Ys_mt0c",
       },
       {
-        imgPath: gnomeThumb,
-        title: "Gnome Wars",
+        imgPath: hrmThumb,
+        title: "HorseRacingManager2026",
         description: (
           <>
-            Took over Gnome Wars from an initial MultiFPS asset base and led a deep rework of core gameplay and multiplayer architecture to make systems more scalable, maintainable, and content-ready.
+            Contributed to the development and live operation of a multiplayer horse racing title, with a primary focus on backend stability, production reliability, and release continuity.
             <br />
-            Implemented core gameplay mechanics, player systems, and new game modes, including a King of the Hill mode inspired by Halo Infinite, while coordinating closely with animation and VFX pipelines for polished in-game integration. Built custom internal tooling, including a one-click Unity build generator for platform-specific outputs (Windows/Linux server and WebGL) with selective scene/script inclusion.
+            Diagnosed and resolved critical AWS issues across DynamoDB, S3, and Cognito that impacted player data integrity and session management.
             <br />
-            Designed and extended multiplayer synchronization using Mirror Networking, reverse-engineered and enhanced backend services, and built private lobby/matchmaking flows.
+            Implemented event-driven live-ops systems for sales, offers, and seasonal content through remote configuration workflows.
             <br />
-            Contributed to a shared backend ecosystem across multiple games (APIs, sockets, economy, and friend systems), managed real-time profile systems with authentication support including SSO and wallet-based login.
+            Supported monetization features by improving in-app purchase flows and promotional mechanics.
             <br />
-            Delivered DevOps workflows for WebGL, backend services, and headless Unity instances on VM infrastructure, plus a Python watchdog utility to recycle unused Unity instances and maintain server performance.
+            Strengthened production resilience by reducing live failures and enabling near zero-downtime content updates.
+            <br />
+            Collaborated closely with cross-functional teams to streamline live-ops deployment pipelines and maintain consistent delivery quality.
           </>
         ),
-        category: "Game",
+        categories: ["Game", "Apps"],
         highlightTags: [
-          "TECHNICAL LEAD",
-          "FPS",
-          "MULTIPLAYER",
-          "SHADER GRAPH",
-          "ANIMATOR",
-          "BATTLE ARENA",
+          "HORSE RACING",
           "LIVE OPS",
+          "AWS",
+          "BACKEND STABILITY",
+          "MONETIZATION",
+          "EVENT-DRIVEN SYSTEMS",
         ],
         techStack: [
           "Unity 3D",
           "C#",
-          "Mirror Networking",
-          ".NET",
-          "Node.js",
-          "JavaScript",
-          "Socket.IO",
-          "MongoDB",
-          "Docker",
-          "NGINX",
-          "Python",
+          "AWS DynamoDB",
+          "AWS S3",
+          "AWS Cognito",
+          "Remote Config",
         ],
         links: [
           {
-            label: "Website",
-            url: "https://gnomewars.io/",
-            type: "website",
+            label: "App Store",
+            url: "https://apps.apple.com/us/app/horse-racing-manager-2026/id1275199710",
+            type: "appstore",
+          },
+          {
+            label: "Play Store",
+            url: "https://play.google.com/store/apps/details?id=com.thirdtime.photofinishtwo&hl=en",
+            type: "playstore",
           },
         ],
-        screenshots: [gnomeThumb],
-        youtubeId: "dVdwccxS02s",
+        screenshots: hrmScreens,
+        youtubeId: "CgMpb12gr_8",
       },
       {
         imgPath: britariaThumb,
@@ -483,191 +484,6 @@ function Projects() {
         ],
         screenshots: britariaScreens,
         youtubeIds: ["os-wKHDheNM", "ipxSvu4-Fng", "QMqUJvnolM0"],
-      },
-      {
-        imgPath: moonThumb,
-        title: "MoonKarts",
-        description: (
-          <>
-            Led MoonKarts as Team Lead, architecting core gameplay systems with an ECS-driven approach and delivering a high-fidelity kart racing experience focused on responsive handling and competitive feel.
-            <br />
-            Designed and implemented physics-intensive gameplay mechanics in Unity, including drift and kart control systems inspired by Mario Kart-style racing gameplay, with careful tuning for consistency and player mastery.
-            <br />
-            Built deterministic multiplayer gameplay using Photon Quantum, and leveraged deterministic replay workflows to improve anti-cheat trust by enabling verifiable match-state playback.
-            <br />
-            Co-led backend and platform integration with Splinterlands and Invennium to deliver Web3 systems, including NFT minting, staking/unstaking, burning, wallet management, and API integrations across centralized services and chain-facing endpoints.
-            <br />
-            Also oversaw off-chain data flows and service coordination to keep gameplay, economy, and wallet-linked user experiences stable across live environments.
-          </>
-        ),
-        categories: ["Game", "Web"],
-        highlightTags: [
-          "TEAM LEAD",
-          "KART RACING",
-          "PLAY-TO-EARN",
-          "DETERMINISTIC MULTIPLAYER",
-          "SHADER GRAPH",
-          "ANIMATOR",
-          "WEB3",
-          "NFT",
-        ],
-        techStack: [
-          "Unity 3D",
-          "C#",
-          "Photon Quantum",
-          "Node.js",
-          "JavaScript",
-          "Solidity",
-        ],
-        links: [
-          {
-            label: "Website",
-            url: "https://moonkarts.arcadecolony.com/maintenance",
-            type: "website",
-          },
-        ],
-        screenshots: moonScreens,
-        youtubeIds: ["lWxDUJ0rCV8", "gFMGj0n1M8g", "m50Kmf8qCzk"],
-      },
-      {
-        imgPath: stakeThumb,
-        title: "StakeHouse",
-        description: (
-          <>
-            Led StakeHouse as Team Lead, architecting core gameplay systems and implementing production-ready casino game logic across poker, roulette, blackjack, and slot experiences.
-            <br />
-            Delivered dynamic UI systems that react in real time to on-chain and platform events, combining websocket streams, API-driven updates, and custom gameplay algorithms to keep game state, rewards, and economy data synchronized for players.
-            <br />
-            Co-led backend and platform integration with Splinterlands and Invennium to deliver Web3 capabilities, including NFT workflows (minting, staking/unstaking, and burning), wallet management, and integrations with centralized services plus chain-facing APIs.
-            <br />
-            Oversaw off-chain data orchestration and service coordination to maintain reliable gameplay, economy stability, and wallet-linked user journeys across live environments.
-          </>
-        ),
-        categories: ["Game", "Web"],
-        highlightTags: [
-          "TEAM LEAD",
-          "CASINO GAMES",
-          "PLAY-TO-EARN",
-          "WEB3",
-          "NFT",
-          "NON-CUSTODIAL WALLET",
-        ],
-        techStack: [
-          "Unity 3D",
-          "C#",
-          "Node.js",
-          "JavaScript",
-          "WebSocket.IO",
-        ],
-        links: [
-          {
-            label: "Website",
-            url: "https://stakehouseden.arcadecolony.com/maintenance",
-            type: "website",
-          },
-        ],
-        screenshots: stakeScreens,
-        youtubeIds: ["wCyQGSiCstk", "oY9zheao31o"],
-      },
-      {
-        imgPath: pfThumb,
-        title: "PhotoFinish",
-        description: (
-          <>
-            Contributed to the development of a live horse racing simulation game, focusing on backend stability and live operations.
-            <br />
-            Integrated and managed AWS services (DynamoDB, S3, Cognito) for secure player data handling and session management.
-            <br />
-            Designed and implemented event-driven systems, including sales, promotions, and seasonal content updates.
-            <br />
-            Supported real-time multiplayer systems, ensuring smooth synchronization and performance.
-            <br />
-            Maintained live game updates with minimal downtime, improving reliability and player experience.
-            <br />
-            Collaborated on monetization features, enhancing in-game purchases and revenue systems.
-          </>
-        ),
-        categories: ["Game", "Apps"],
-        highlightTags: [
-          "LIVE OPS",
-          "HORSE RACING",
-          "BACKEND STABILITY",
-          "AWS",
-          "MONETIZATION",
-        ],
-        techStack: [
-          "Unity 3D",
-          "C#",
-          "AWS DynamoDB",
-          "AWS S3",
-          "AWS Cognito",
-          "Event-Driven Systems",
-          "JSON",
-        ],
-        links: [
-          {
-            label: "App Store",
-            url: "https://apps.apple.com/us/app/photo-finish-horse-racing/id993764346",
-            type: "appstore",
-          },
-          {
-            label: "Play Store",
-            url: "https://play.google.com/store/apps/details?id=com.thirdtime.derbyking",
-            type: "playstore",
-          },
-        ],
-        screenshots: pfScreens,
-        youtubeId: "M1EwfJSOci0",
-      },
-      {
-        imgPath: hrmThumb,
-        title: "HorseRacingManager2026",
-        description: (
-          <>
-            Contributed to the development and live operation of a multiplayer horse racing title, with a primary focus on backend stability, production reliability, and release continuity.
-            <br />
-            Diagnosed and resolved critical AWS issues across DynamoDB, S3, and Cognito that impacted player data integrity and session management.
-            <br />
-            Implemented event-driven live-ops systems for sales, offers, and seasonal content through remote configuration workflows.
-            <br />
-            Supported monetization features by improving in-app purchase flows and promotional mechanics.
-            <br />
-            Strengthened production resilience by reducing live failures and enabling near zero-downtime content updates.
-            <br />
-            Collaborated closely with cross-functional teams to streamline live-ops deployment pipelines and maintain consistent delivery quality.
-          </>
-        ),
-        categories: ["Game", "Apps"],
-        highlightTags: [
-          "HORSE RACING",
-          "LIVE OPS",
-          "AWS",
-          "BACKEND STABILITY",
-          "MONETIZATION",
-          "EVENT-DRIVEN SYSTEMS",
-        ],
-        techStack: [
-          "Unity 3D",
-          "C#",
-          "AWS DynamoDB",
-          "AWS S3",
-          "AWS Cognito",
-          "Remote Config",
-        ],
-        links: [
-          {
-            label: "App Store",
-            url: "https://apps.apple.com/us/app/horse-racing-manager-2026/id1275199710",
-            type: "appstore",
-          },
-          {
-            label: "Play Store",
-            url: "https://play.google.com/store/apps/details?id=com.thirdtime.photofinishtwo&hl=en",
-            type: "playstore",
-          },
-        ],
-        screenshots: hrmScreens,
-        youtubeId: "CgMpb12gr_8",
       },
       {
         imgPath: popThumb,
@@ -760,6 +576,191 @@ function Projects() {
           },
         ],
         screenshots: wbScreens,
+      },
+      {
+        imgPath: pfThumb,
+        title: "PhotoFinish",
+        description: (
+          <>
+            Contributed to the development of a live horse racing simulation game, focusing on backend stability and live operations.
+            <br />
+            Integrated and managed AWS services (DynamoDB, S3, Cognito) for secure player data handling and session management.
+            <br />
+            Designed and implemented event-driven systems, including sales, promotions, and seasonal content updates.
+            <br />
+            Supported real-time multiplayer systems, ensuring smooth synchronization and performance.
+            <br />
+            Maintained live game updates with minimal downtime, improving reliability and player experience.
+            <br />
+            Collaborated on monetization features, enhancing in-game purchases and revenue systems.
+          </>
+        ),
+        categories: ["Game", "Apps"],
+        highlightTags: [
+          "LIVE OPS",
+          "HORSE RACING",
+          "BACKEND STABILITY",
+          "AWS",
+          "MONETIZATION",
+        ],
+        techStack: [
+          "Unity 3D",
+          "C#",
+          "AWS DynamoDB",
+          "AWS S3",
+          "AWS Cognito",
+          "Event-Driven Systems",
+          "JSON",
+        ],
+        links: [
+          {
+            label: "App Store",
+            url: "https://apps.apple.com/us/app/photo-finish-horse-racing/id993764346",
+            type: "appstore",
+          },
+          {
+            label: "Play Store",
+            url: "https://play.google.com/store/apps/details?id=com.thirdtime.derbyking",
+            type: "playstore",
+          },
+        ],
+        screenshots: pfScreens,
+        youtubeId: "M1EwfJSOci0",
+      },
+      {
+        imgPath: gnomeThumb,
+        title: "Gnome Wars",
+        description: (
+          <>
+            Took over Gnome Wars from an initial MultiFPS asset base and led a deep rework of core gameplay and multiplayer architecture to make systems more scalable, maintainable, and content-ready.
+            <br />
+            Implemented core gameplay mechanics, player systems, and new game modes, including a King of the Hill mode inspired by Halo Infinite, while coordinating closely with animation and VFX pipelines for polished in-game integration. Built custom internal tooling, including a one-click Unity build generator for platform-specific outputs (Windows/Linux server and WebGL) with selective scene/script inclusion.
+            <br />
+            Designed and extended multiplayer synchronization using Mirror Networking, reverse-engineered and enhanced backend services, and built private lobby/matchmaking flows.
+            <br />
+            Contributed to a shared backend ecosystem across multiple games (APIs, sockets, economy, and friend systems), managed real-time profile systems with authentication support including SSO and wallet-based login.
+            <br />
+            Delivered DevOps workflows for WebGL, backend services, and headless Unity instances on VM infrastructure, plus a Python watchdog utility to recycle unused Unity instances and maintain server performance.
+          </>
+        ),
+        category: "Game",
+        highlightTags: [
+          "TECHNICAL LEAD",
+          "FPS",
+          "MULTIPLAYER",
+          "SHADER GRAPH",
+          "ANIMATOR",
+          "BATTLE ARENA",
+          "LIVE OPS",
+        ],
+        techStack: [
+          "Unity 3D",
+          "C#",
+          "Mirror Networking",
+          ".NET",
+          "Node.js",
+          "JavaScript",
+          "Socket.IO",
+          "MongoDB",
+          "Docker",
+          "NGINX",
+          "Python",
+        ],
+        // links: [
+        //   {
+        //     label: "Website",
+        //     url: "https://gnomewars.io/",
+        //     type: "website",
+        //   },
+        // ],
+        screenshots: [gnomeThumb],
+        youtubeId: "dVdwccxS02s",
+      },
+      {
+        imgPath: moonThumb,
+        title: "MoonKarts",
+        description: (
+          <>
+            Led MoonKarts as Team Lead, architecting core gameplay systems with an ECS-driven approach and delivering a high-fidelity kart racing experience focused on responsive handling and competitive feel.
+            <br />
+            Designed and implemented physics-intensive gameplay mechanics in Unity, including drift and kart control systems inspired by Mario Kart-style racing gameplay, with careful tuning for consistency and player mastery.
+            <br />
+            Built deterministic multiplayer gameplay using Photon Quantum, and leveraged deterministic replay workflows to improve anti-cheat trust by enabling verifiable match-state playback.
+            <br />
+            Co-led backend and platform integration with Splinterlands and Invennium to deliver Web3 systems, including NFT minting, staking/unstaking, burning, wallet management, and API integrations across centralized services and chain-facing endpoints.
+            <br />
+            Also oversaw off-chain data flows and service coordination to keep gameplay, economy, and wallet-linked user experiences stable across live environments.
+          </>
+        ),
+        categories: ["Game", "Web"],
+        highlightTags: [
+          "TEAM LEAD",
+          "KART RACING",
+          "PLAY-TO-EARN",
+          "DETERMINISTIC MULTIPLAYER",
+          "SHADER GRAPH",
+          "ANIMATOR",
+          "WEB3",
+          "NFT",
+        ],
+        techStack: [
+          "Unity 3D",
+          "C#",
+          "Photon Quantum",
+          "Node.js",
+          "JavaScript",
+          "Solidity",
+        ],
+        links: [
+          {
+            label: "Website",
+            url: "https://moonkarts.arcadecolony.com/maintenance",
+            type: "website",
+          },
+        ],
+        screenshots: moonScreens,
+        youtubeIds: [//"lWxDUJ0rCV8", 
+          "gFMGj0n1M8g", "m50Kmf8qCzk"],
+      },
+      {
+        imgPath: stakeThumb,
+        title: "StakeHouse",
+        description: (
+          <>
+            Led StakeHouse as Team Lead, architecting core gameplay systems and implementing production-ready casino game logic across poker, roulette, blackjack, and slot experiences.
+            <br />
+            Delivered dynamic UI systems that react in real time to on-chain and platform events, combining websocket streams, API-driven updates, and custom gameplay algorithms to keep game state, rewards, and economy data synchronized for players.
+            <br />
+            Co-led backend and platform integration with Splinterlands and Invennium to deliver Web3 capabilities, including NFT workflows (minting, staking/unstaking, and burning), wallet management, and integrations with centralized services plus chain-facing APIs.
+            <br />
+            Oversaw off-chain data orchestration and service coordination to maintain reliable gameplay, economy stability, and wallet-linked user journeys across live environments.
+          </>
+        ),
+        categories: ["Game", "Web"],
+        highlightTags: [
+          "TEAM LEAD",
+          "CASINO GAMES",
+          "PLAY-TO-EARN",
+          "WEB3",
+          "NFT",
+          "NON-CUSTODIAL WALLET",
+        ],
+        techStack: [
+          "Unity 3D",
+          "C#",
+          "Node.js",
+          "JavaScript",
+          "WebSocket.IO",
+        ],
+        links: [
+          {
+            label: "Website",
+            url: "https://stakehouseden.arcadecolony.com/maintenance",
+            type: "website",
+          },
+        ],
+        screenshots: stakeScreens,
+        youtubeIds: ["wCyQGSiCstk", "oY9zheao31o"],
       },
       {
         imgPath: murlanThumb,

@@ -776,8 +776,36 @@ button:focus {
 
 .resume {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   justify-content: center;
+}
+
+.resume-pager {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  margin: 24px auto 0 !important;
+  padding: 0 24px !important;
+  max-width: 1100px !important;
+  width: 100% !important;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-page-indicator {
+  color: #ccc !important;
+  min-width: 48px;
+  text-align: center;
+}
+
+.resume-page-btn {
+  width: auto !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  padding: 4px 12px !important;
+  font-size: 0.8rem !important;
+  line-height: 1.2 !important;
 }
 
 .resume-left {

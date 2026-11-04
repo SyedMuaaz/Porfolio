@@ -10,10 +10,25 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
+
+  const onDocumentLoadSuccess = ({ numPages: nextNumPages }) => {
+    setNumPages(nextNumPages);
+    setPageNumber(1);
+  };
+
+  const goToPrevPage = () => {
+    setPageNumber((page) => Math.max(1, page - 1));
+  };
+
+  const goToNextPage = () => {
+    setPageNumber((page) => Math.min(numPages || page, page + 1));
+  };
 
   return (
     <div>
@@ -31,22 +46,40 @@ function ResumeNew() {
           </Button>
         </Row>
 
-        <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-          </Document>
-        </Row>
+        {numPages > 1 && (
+          <div className="resume-pager">
+            <Button
+              variant="secondary"
+              size="sm"
+              className="resume-page-btn"
+              onClick={goToPrevPage}
+              disabled={pageNumber <= 1}
+            >
+              ← Previous
+            </Button>
+            <span className="resume-page-indicator">
+              {pageNumber} / {numPages}
+            </span>
+            <Button
+              variant="primary"
+              size="sm"
+              className="resume-page-btn"
+              onClick={goToNextPage}
+              disabled={pageNumber >= numPages}
+            >
+              Next →
+            </Button>
+          </div>
+        )}
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
+        <Row className="resume">
+          <Document
+            file={pdf}
+            onLoadSuccess={onDocumentLoadSuccess}
+            className="d-flex justify-content-center"
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
+            <Page pageNumber={pageNumber} scale={width > 786 ? 1.7 : 0.6} />
+          </Document>
         </Row>
       </Container>
     </div>
